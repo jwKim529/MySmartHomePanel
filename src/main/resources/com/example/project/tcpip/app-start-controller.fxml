@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.project.tcpip.AppStartController"
+            prefHeight="400.0" prefWidth="600.0">
+    <center>
+        <VBox alignment="CENTER">
+            <Label text="MyHome Control Panel"
+                   style="-fx-font-size: 40px; -fx-text-fill: blue; -fx-font-weight: bold;"/>
+            <spacing>200.0</spacing>
+            <Button fx:id="button_start" alignment="CENTER" prefWidth="150.0" text="시작하기"
+                    style="-fx-font-size: 20px; -fx-text-fill: black;"
+                    onAction="#buttonOnClickedStart"/>
+            <spacing>20.0</spacing>
+            <Button fx:id="button_end" alignment="CENTER" prefWidth="150.0" text="종료"
+                    style="-fx-font-size: 20px; -fx-text-fill: black;"
+                    onAction="#buttonOnClickedEnd"/>
+        </VBox>
+    </center>
+</BorderPane>

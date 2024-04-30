@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.shape.Circle?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.project.tcpip.AppMainController"
+            prefHeight="400.0" prefWidth="600.0">
+    <top>
+        <VBox>
+            <HBox alignment="CENTER">
+                <padding>
+                    <Insets topRightBottomLeft="10.0"/>
+                </padding>
+                <spacing>20.0</spacing>
+                <Label text="MyHome Status"
+                       style="-fx-font-size: 20px; -fx-text-fill: blue; -fx-font-weight: bold;"/>
+            </HBox>
+            <HBox alignment="CENTER">
+                <padding>
+                    <Insets topRightBottomLeft="10.0"/>
+                </padding>
+                <spacing>20.0</spacing>
+                <VBox>
+                    <HBox alignment="CENTER">
+                        <Label text="현재온도 : " prefWidth="150.0" prefHeight="20.0" />
+                        <Label fx:id="label_temperature" prefWidth="50.0" prefHeight="20.0" text="온도"/>
+                    </HBox>
+                    <HBox>
+                        <ProgressBar fx:id="progressbar_temperature" prefWidth="300.0" prefHeight="20.0" />
+                    </HBox>
+                </VBox>
+                <VBox>
+                    <HBox alignment="CENTER">
+                        <Label text="현재습도 : " prefWidth="150.0" prefHeight="20.0" />
+                        <Label fx:id="label_humidity" prefWidth="50.0" prefHeight="20.0" text="습도"/>
+                    </HBox>
+                    <HBox>
+                        <ProgressBar fx:id="progressbar_humidity" prefWidth="300.0" prefHeight="20.0" />
+                    </HBox>
+                </VBox>
+            </HBox>
+            <HBox alignment="CENTER">
+                <padding>
+                    <Insets topRightBottomLeft="10.0"/>
+                </padding>
+                <spacing>20.0</spacing>
+                <VBox>
+                    <HBox alignment="CENTER">
+                        <Label text="희망온도 : " prefWidth="150.0" prefHeight="20.0" />
+                        <Label fx:id="desired_label_temperature" prefWidth="50.0" prefHeight="20.0" text="온도"/>
+                    </HBox>
+                    <HBox alignment="CENTER">
+                        <TextField fx:id="desired_text_temperature" prefWidth="200.0"/>
+                        <spacing>10.0</spacing>
+                        <Button fx:id="desired_button_temperature" text="변경" prefWidth="80.0"
+                                onAction="#buttonOnClickedChangedTemperature"/>
+                    </HBox>
+                </VBox>
+                <VBox>
+                    <HBox alignment="CENTER">
+                        <Label text="희망습도 : " prefWidth="150.0" prefHeight="20.0" />
+                        <Label fx:id="desired_label_humidity" prefWidth="50.0" prefHeight="20.0" text="습도"/>
+                    </HBox>
+                    <HBox alignment="CENTER">
+                        <TextField fx:id="desired_text_humidity" prefWidth="200.0"/>
+                        <spacing>10.0</spacing>
+                        <Button fx:id="desired_button_humidity" text="변경" prefWidth="80.0"
+                                onAction="#buttonOnClickedChangedHumidity"/>
+                    </HBox>
+                </VBox>
+            </HBox>
+        </VBox>
+    </top>
+    <center>
+        <VBox>
+            <padding>
+                <Insets topRightBottomLeft="50.0"/>
+            </padding>
+            <HBox alignment="CENTER">
+                <VBox alignment="CENTER">
+                    <Label text="냉방기"/>
+                    <spacing>20.0</spacing>
+                    <Circle fx:id="cooler_led" fill="blue" radius="30.0" stroke="black"/>
+                </VBox>
+                <spacing>50.0</spacing>
+                <VBox alignment="CENTER">
+                    <Label text="난방기"/>
+                    <spacing>20.0</spacing>
+                    <Circle fx:id="heater_led" fill="red" radius="30.0" stroke="black"/>
+                </VBox>
+                <spacing>50.0</spacing>
+                <VBox alignment="CENTER">
+                    <Label text="가습기"/>
+                    <spacing>20.0</spacing>
+                    <Circle fx:id="humidif_led" fill="skyblue" radius="30.0" stroke="black"/>
+                </VBox>
+                <spacing>50.0</spacing>
+                <VBox alignment="CENTER">
+                    <Label text="제습기"/>
+                    <spacing>20.0</spacing>
+                    <Circle fx:id="dehumidif_led" fill="greenyellow" radius="30.0" stroke="black"/>
+                </VBox>
+            </HBox>
+        </VBox>
+    </center>
+    <bottom>
+        <HBox alignment="CENTER">
+            <VBox alignment="CENTER">
+                <spacing>10.0</spacing>
+                <Button fx:id="main_button_to_room" alignment="CENTER" prefWidth="200.0" text="전등 보기"
+                        style="-fx-font-size: 20px; -fx-text-fill: black;"
+                        onAction="#buttonOnClickedMainToRoom"/>
+                <spacing>30.0</spacing>
+                <Button fx:id="main_button_end" alignment="CENTER" prefWidth="200.0" text="종료"
+                        style="-fx-font-size: 20px; -fx-text-fill: black;"
+                        onAction="#buttonOnClickedMainEnd"/>
+                <spacing>10.0</spacing>
+            </VBox>
+        </HBox>
+    </bottom>
+</BorderPane>

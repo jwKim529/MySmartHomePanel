@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.shape.Circle?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.project.tcpip.AppRoomController"
+            prefHeight="400.0" prefWidth="600.0">
+    <top>
+        <HBox alignment="CENTER">
+            <padding>
+                <Insets topRightBottomLeft="10.0"/>
+            </padding>
+            <spacing>20.0</spacing>
+            <Label text="MyHome Light Control"
+                   style="-fx-font-size: 20px; -fx-text-fill: blue; -fx-font-weight: bold;"/>
+        </HBox>
+    </top>
+    <center>
+        <VBox alignment="CENTER">
+            <spacing>20.0</spacing>
+            <HBox alignment="CENTER">
+                <spacing>20.0</spacing>
+                <!-- 방 형태 만들기, 높이 : 240, 너비 240-->
+                <HBox>
+                    <VBox prefHeight="240.0" prefWidth="160.0">
+                        <HBox prefHeight="80.0" prefWidth="160.0">
+                            <VBox prefHeight="80.0" prefWidth="60.0">
+                                <HBox prefHeight="20.0" prefWidth="60.0"/>
+                                <HBox prefHeight="60.0" prefWidth="60.0"
+                                      style="-fx-background-color: rgb(173, 216, 230);">
+                                    <StackPane HBox.hgrow="ALWAYS">
+                                        <Label text="화장실2" StackPane.alignment="TOP_LEFT"/>
+                                        <Circle fx:id="bath2_light"
+                                                fill="yellow" radius="10.0" stroke="black" StackPane.alignment="CENTER"
+                                        />
+                                    </StackPane>
+                                </HBox>
+                            </VBox>
+                            <VBox prefHeight="80.0" prefWidth="100.0"
+                                  style="-fx-background-color: rgb(221, 160, 221);">
+                                <StackPane VBox.vgrow="ALWAYS">
+                                    <Label text="부엌" StackPane.alignment="TOP_LEFT"/>
+                                    <Circle fx:id="kitchen_light" fill="yellow" radius="10.0" stroke="black" StackPane.alignment="CENTER"/>
+                                </StackPane>
+                            </VBox>
+                        </HBox>
+                        <HBox prefHeight="160.0" prefWidth="160.0">
+                            <VBox prefHeight="160.0" prefWidth="80.0">
+                                <HBox prefHeight="80.0" prefWidth="80.0"
+                                      style="-fx-background-color: rgb(192, 192, 192);">
+                                    <StackPane HBox.hgrow="ALWAYS">
+                                        <Label text="방3" StackPane.alignment="TOP_LEFT"/>
+                                        <Circle fx:id="room3_light" fill="yellow" radius="10.0" stroke="black" StackPane.alignment="CENTER"/>
+                                    </StackPane>
+                                </HBox>
+                                <HBox prefHeight="80.0" prefWidth="80.0"/>
+                            </VBox>
+                            <VBox prefHeight="160.0" prefWidth="80.0">
+                                <HBox prefHeight="80.0" prefWidth="80.0"
+                                      style="-fx-background-color: rgb(255, 255, 153);">
+                                    <StackPane HBox.hgrow="ALWAYS">
+                                        <Label text="거실2" StackPane.alignment="TOP_LEFT"/>
+                                        <Circle fx:id="living2_light" fill="yellow" radius="10.0" stroke="black" StackPane.alignment="CENTER"/>
+                                    </StackPane>
+                                </HBox>
+                                <HBox prefHeight="80.0" prefWidth="80.0"
+                                      style="-fx-background-color: rgb(255, 218, 185);">
+                                    <StackPane HBox.hgrow="ALWAYS">
+                                        <Label text="거실1" StackPane.alignment="TOP_LEFT"/>
+                                        <Circle fx:id="living1_light" fill="yellow" radius="10.0" stroke="black" StackPane.alignment="CENTER"/>
+                                    </StackPane>
+                                </HBox>
+                            </VBox>
+                        </HBox>
+                    </VBox>
+                    <VBox prefHeight="240.0" prefWidth="80.0">
+                        <HBox prefHeight="20.0" prefWidth="80.0"/>
+                        <HBox prefHeight="60.0" prefWidth="80.0">
+                            <VBox prefHeight="60.0" prefWidth="60.0"
+                                  style="-fx-background-color: rgb(173, 216, 230);">
+                                <StackPane VBox.vgrow="ALWAYS">
+                                    <Label text="화장실1" StackPane.alignment="TOP_LEFT"/>
+                                    <Circle fx:id="bath1_light" fill="yellow" radius="10.0" stroke="black" StackPane.alignment="CENTER"/>
+                                </StackPane>
+                            </VBox>
+                            <VBox prefHeight="60.0" prefWidth="20.0"/>
+                        </HBox>
+                        <HBox prefHeight="80.0" prefWidth="80.0"
+                              style="-fx-background-color: rgb(144, 238, 144);">
+                            <StackPane HBox.hgrow="ALWAYS">
+                                <Label text="방2" StackPane.alignment="TOP_LEFT"/>
+                                <Circle fx:id="room2_light" fill="yellow" radius="10.0" stroke="black" StackPane.alignment="CENTER"/>
+                            </StackPane>
+                        </HBox>
+                        <HBox prefHeight="80.0" prefWidth="80.0"
+                              style="-fx-background-color: rgb(255, 182, 193);">
+                            <StackPane HBox.hgrow="ALWAYS">
+                                <Label text="방1" StackPane.alignment="TOP_LEFT"/>
+                                <Circle fx:id="room1_light" fill="yellow" radius="10.0" stroke="black" StackPane.alignment="CENTER"/>
+                            </StackPane>
+                        </HBox>
+                    </VBox>
+                </HBox>
+                <spacing>20.0</spacing>
+            </HBox>
+            <spacing>20.0</spacing>
+        </VBox>
+    </center>
+    <bottom>
+        <VBox alignment="CENTER">
+            <spacing>10.0</spacing>
+            <Button fx:id="room_button_to_main" alignment="CENTER" prefWidth="200.0" text="돌아가기"
+                    style="-fx-font-size: 20px; -fx-text-fill: black;"
+                    onAction="#buttonOnClickedRoomToMain"/>
+            <spacing>30.0</spacing>
+            <Button fx:id="room_button_end" alignment="CENTER" prefWidth="200.0" text="종료"
+                    style="-fx-font-size: 20px; -fx-text-fill: black;"
+                    onAction="#buttonOnClickedRoomEnd"/>
+        </VBox>
+    </bottom>
+</BorderPane>
